@@ -1,0 +1,11 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+		<SelectDialog
+		
+		title="Select Product"
+		search="handleSearch"
+		confirm="handleClose"
+		cancel="handleClose"
+	 >	</SelectDialog>
+</core:FragmentDefinition>

@@ -9,7 +9,7 @@
 					<Input id="Input" showValueHelp="true" valueHelpRequest=".onValueHelpRequested">
 					</Input>
 					<Label text="Quntity" labelFor="input0"/>
-					<Input xmlns="sap.m" value="100" id="input0" showValueHelp="true" valueHelpRequest=".onValueHelpRequested"/>
+					<Input xmlns="sap.m" value="100" id="input0" showValueHelp="true" valueHelpRequest="onValueRequestForQuant"/>
 					
 					
 					

@@ -68,6 +68,12 @@
 				"settings": {},
 				"uri": "./model/columnsModel.json",
 				"preload": false
+			},
+			"quant": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"uri": "./model/Quantity.json",
+				"preload": false
 			}
 		},
 		"resources": {

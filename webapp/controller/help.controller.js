@@ -13,6 +13,7 @@ sap.ui.define([
 			this._oInput.setSelectedKey("HT-1001");
 			this.oColModel = new JSONModel("model/columnsModel.json");
 			this.oProductsModel = new JSONModel("model/products.json");
+			this.oQuantity = new JSONModel("model/Quantity.json");
 		},
 
 		onValueHelpRequested: function() {
@@ -64,8 +65,24 @@ sap.ui.define([
 
 		onValueHelpAfterClose: function () {
 			this._oValueHelpDialog.destroy();
-		}
-
-	
+		},
+        
+        
+        
+        onValueRequestForQuant: function (oEvent){
+        	
+        		var diloge = sap.ui.xmlfragment("value.valueHelp.view.quantity", this);
+        		this.getView().addDependent(diloge);
+			   
+			     diloge.bindAggregation("items" , {
+			     	path:"quant>/Quant",
+			     	template : new sap.m.StandardListItem({
+			     		
+			     		title:"{quant>Quantity}"
+			     	})
+			     });
+			
+  diloge.open();
+        }
 	});
 });
