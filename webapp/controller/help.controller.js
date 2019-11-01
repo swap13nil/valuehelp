@@ -16,12 +16,13 @@ sap.ui.define([
 			this.oQuantity = new JSONModel("model/Quantity.json");
 		},
 
-		onValueHelpRequested: function() {
-		
+		onValueHelpRequested: function(oEvent) {
+		var Oid = oEvent.getParameters().id.split('--')[2];
+	
         	
         		var odiloge1 = sap.ui.xmlfragment("value.valueHelp.view.quantity", this);
         		this.getView().addDependent(odiloge1);
-			   
+			   if(Oid === "Input"){
 			     odiloge1.bindAggregation("items" , {
 			     	path:"product>/ProductCollection",
 			     	template : new sap.m.StandardListItem({
@@ -31,23 +32,9 @@ sap.ui.define([
 			     });
 			
   odiloge1.open();
-        },
-
-		onValueHelpOkPress: function (oEvent) {
-	   
-var Otitle = oEvent.getParameter("selectedItem").getTitle();
-
-		this._oInput = this.getView().byId("Input");
-	     this._oInput.setValue(Otitle);
-		},
-
-	
-        
-        
-        
-        onValueRequestForQuant: function (oEvent){
-        	
-        		var diloge = sap.ui.xmlfragment("value.valueHelp.view.quantity", this);
+        }
+			else{
+				      		var diloge = sap.ui.xmlfragment("value.valueHelp.view.quantity", this);
         		this.getView().addDependent(diloge);
 			   
 			     diloge.bindAggregation("items" , {
@@ -59,6 +46,21 @@ var Otitle = oEvent.getParameter("selectedItem").getTitle();
 			     });
 			
   diloge.open();
-        }
+			}
+		},
+
+		onValueHelpOkPress: function (oEvent) {
+	   console.log(oEvent);
+var Otitle = oEvent.getParameter("selectedItem").getTitle();
+
+		this._oInput = this.getView().byId("Input");
+	     this._oInput.setValue(Otitle);
+		}
+
+	
+        
+        
+        
+       
 	});
 });
