@@ -5,7 +5,7 @@
 		
 		title="Select Product"
 		search="handleSearch"
-		confirm="handleClose"
+		confirm="onValueHelpOkPress"
 		cancel="handleClose"
 	 >	</SelectDialog>
 </core:FragmentDefinition>
