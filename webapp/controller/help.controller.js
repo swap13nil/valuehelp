@@ -35,7 +35,7 @@ sap.ui.define([
 
 		onValueHelpOkPress: function (oEvent) {
 	   
-		
+		consloe.log(oEvent);
 	
 	
 		},
