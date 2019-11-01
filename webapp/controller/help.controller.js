@@ -6,20 +6,25 @@ sap.ui.define([
 	"sap/m/Token"
 ], function (Controller , JSONModel, ColumnListItem, Label, Token) {
 	"use strict";
-
+var oName = "Somenthing";
 	return Controller.extend("value.valueHelp.controller.help", {
+
+   
 			onInit: function () {
-			this._oInput = this.getView().byId("Input");
-			this._oInput.setSelectedKey("HT-1001");
+		
 			this.oColModel = new JSONModel("model/columnsModel.json");
 			this.oProductsModel = new JSONModel("model/products.json");
 			this.oQuantity = new JSONModel("model/Quantity.json");
+			
 		},
+	
 
 		onValueHelpRequested: function(oEvent) {
 		var Oid = oEvent.getParameters().id.split('--')[2];
-	
+	  
+        	oName = Oid;
         	
+        
         		var odiloge1 = sap.ui.xmlfragment("value.valueHelp.view.quantity", this);
         		this.getView().addDependent(odiloge1);
 			   if(Oid === "Input"){
@@ -50,12 +55,22 @@ sap.ui.define([
 		},
 
 		onValueHelpOkPress: function (oEvent) {
-	   console.log(oEvent);
+if(oName === "Input") {
 var Otitle = oEvent.getParameter("selectedItem").getTitle();
 
 		this._oInput = this.getView().byId("Input");
 	     this._oInput.setValue(Otitle);
 		}
+		
+		else {
+			
+			var Otitle1 = oEvent.getParameter("selectedItem").getTitle();
+
+		this._oInput = this.getView().byId("input0");
+	     this._oInput.setValue(Otitle1);
+			
+			
+		}}
 
 	
         
