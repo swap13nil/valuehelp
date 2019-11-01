@@ -1,0 +1,21 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form" xmlns="sap.m" xmlns:core="sap.ui.core" controllerName="value.valueHelp.controller.help">
+
+	<layout:Grid defaultSpan="L12 M12 S12">
+		<layout:content>
+			<VBox>
+			<form:SimpleForm 	title="Product Cart" editable="true" layout="ResponsiveGridLayout" labelSpanM="12" labelSpanL="12" labelSpanXL="12" emptySpanL="6" emptySpanM="6">
+				<form:content>
+					<Label text="Products" labelFor="multiInput"/>
+					<Input id="Input" showValueHelp="true" valueHelpRequest=".onValueHelpRequested">
+					</Input>
+					<Label text="Quntity" labelFor="input0"/>
+					<Input xmlns="sap.m" value="100" id="input0" showValueHelp="true" valueHelpRequest=".onValueHelpRequested"/>
+					
+					
+					
+				</form:content>
+			</form:SimpleForm>
+			</VBox>
+		</layout:content>
+	</layout:Grid>
+</mvc:View>
