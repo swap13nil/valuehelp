@@ -35,9 +35,10 @@ sap.ui.define([
 
 		onValueHelpOkPress: function (oEvent) {
 	   
-		consloe.log(oEvent);
-	
-	
+var Otitle = oEvent.getParameter("selectedItem").getTitle();
+
+		this._oInput = this.getView().byId("Input");
+	     this._oInput.setValue(Otitle);
 		},
 
 	
